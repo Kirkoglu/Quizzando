@@ -96,7 +96,7 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
             R.id.optionFour_TextView -> selectedOptionView(optionFour_TextView, 4)
             R.id.submit_Button -> {
                 if (selectedOption == 0) {
-                    Toast.makeText(this, "Please choose your answer", Toast.LENGTH_SHORT).show()
+                    currentPosition++
                     when {
                         currentPosition <= questionList!!.size -> {
                             putQuestion()
@@ -120,7 +120,7 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
                         submit_Button.text = "GO TO NEXT KLAUSIMAS"
                     }
                 }
-                currentPosition++
+                selectedOption = 0
             }
         }
 
