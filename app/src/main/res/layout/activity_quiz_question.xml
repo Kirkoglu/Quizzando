@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".QuizQuestionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/question_image_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/ic_question_one" />
+
+        <TextView
+            android:id="@+id/question_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:textColor="#363A43"
+            android:textSize="20sp"
+            tools:text="What country does this flag belong to?" />
+
+
+        <LinearLayout
+            android:id="@+id/progressBar_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:indeterminate="false"
+                android:max="10"
+                android:minHeight="50dp"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/progressBar_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textColorHint="#7A8089"
+                android:textSize="14sp"
+                tools:text="0/10" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/optionOne_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Apple" />
+
+        <TextView
+            android:id="@+id/optionTwo_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Google" />
+
+        <TextView
+            android:id="@+id/optionThree_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Android Inc." />
+
+        <TextView
+            android:id="@+id/optionFour_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Nokia" />
+
+        <Button
+            android:id="@+id/submit_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="SUBMIT"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:fillViewport="true"-->
+    <!--    tools:context=".QuizQuestionActivity">-->
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:padding="16dp">-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/second_answer_button"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginBottom="4dp"-->
+    <!--            android:text="Button"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/third_answer_button"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/third_answer_button"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginBottom="4dp"-->
+    <!--            android:text="Button"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/fourth_answer_button"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/fourth_answer_button"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginBottom="4dp"-->
+    <!--            android:text="Button"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/submit_button"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/submit_button"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginBottom="4dp"-->
+    <!--            android:text="Submit"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            android:textColor="@android:color/white"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:background="@android:color/holo_green_dark"/>-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/first_answer_button"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginBottom="4dp"-->
+    <!--            android:text="Button"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/second_answer_button"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/question_textView"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginBottom="8dp"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="Krepšininkas pelnęs 81 tašką prieš Toronto Raptors komandą?"-->
+    <!--            android:textSize="20sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/progressBar"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/question_image_imageView"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_marginBottom="8dp"-->
+    <!--            android:scaleType="centerCrop"-->
+    <!--            android:src="@drawable/ic_question_one"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/question_textView"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/progressBar"-->
+    <!--            style="?android:attr/progressBarStyleHorizontal"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginBottom="8dp"-->
+    <!--            android:indeterminate="false"-->
+    <!--            android:max="10"-->
+    <!--            android:minHeight="50dp"-->
+    <!--            android:progress="0"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/first_answer_button"-->
+    <!--            app:layout_constraintEnd_toStartOf="@+id/textView"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="0/5"-->
+    <!--            android:textSize="14dp"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/first_answer_button"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/progressBar" />-->
+
+
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--</ScrollView>-->
