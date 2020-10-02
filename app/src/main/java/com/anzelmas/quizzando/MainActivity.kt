@@ -11,12 +11,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         start_game_button.setOnClickListener {
             if(name_textView.text.toString().isEmpty()) {
-                Toast.makeText(this, "Prašau įvesti savo vardą.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please insert your name", Toast.LENGTH_SHORT).show()
             } else {
                 //With help of the intent redirect from one activity to another
                 intent = Intent(this, QuizQuestionActivity::class.java)
+                intent.putExtra(Constants.USER_NAME, name_textView.text.toString())
                 startActivity(intent)
                 finish()
             }

@@ -9,10 +9,16 @@
 
 <!--    Application theme I am going to use for Quizzando-->
 
-    <style name="NoActionBarTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorBlue</item>
+    <style name="NoActionBarTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorGreen</item>
+        <item name="colorAccent">@color/lightBlue</item>
+    </style>
+
+    <style name="WithActionBarTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/lightBlue</item>
     </style>
 
 </resources>

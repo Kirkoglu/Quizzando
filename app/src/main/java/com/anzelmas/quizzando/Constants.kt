@@ -2,68 +2,132 @@ package com.anzelmas.quizzando
 
 object Constants {
 
+    const val USER_NAME: String = "user_name"
+    const val TOTAL_QUESTIONS: String = "total_questions"
+    const val CORRECT_ANSWERS: String = "correct_answers"
+
     fun getQuestions(): ArrayList<Question> {
         val questionList = ArrayList<Question>()
 
         val questionsOne = Question(
             1,
-            "Can you see thi question number one?",
+            "2011-2012 season was shorter because of a lockout. How many games teams played?",
             R.drawable.ic_question_one,
-            "Australia",
-            "Argentina",
-            "Austria",
-            "Albania",
-            1
+            "48",
+            "54",
+            "60",
+            "66",
+            4
         )
         questionList.add(questionsOne)
 
         val questionsTwo = Question(
             2,
-            "Can you see this question two?",
+            "How many times Michael Jordan won Dunk Contest?",
             R.drawable.ic_question_two,
-            "Belgium",
-            "Brazil",
-            "Belarus",
-            "Bulgaria",
-            3
+            "One",
+            "Two",
+            "Three",
+            "Four",
+            2
         )
         questionList.add(questionsTwo)
 
-        val questionsThree = Question(
+        val questionThree = Question(
             3,
-            "This is questions three. Can you see it?",
+            "First pick of 2000 NBA draft?",
             R.drawable.ic_question_three,
-            "Cyprus",
-            "Croatia",
-            "China",
-            "Columbia",
+            "Jamal Crawford",
+            "Darius Miles",
+            "Hedo Turkoglu",
+            "Kenyon Martin",
             4
         )
-        questionList.add(questionsThree)
+        questionList.add(questionThree)
 
-        val questionsFour = Question(
+        val questionFour = Question(
             4,
-            "Question four I reckon. You still here?",
+            "Tallest player in NBA history?",
             R.drawable.ic_question_four,
-            "Denmark",
-            "Dominica",
-            "Djibouti",
-            "Dominican Republic",
+            "Bol Bol",
+            "Manute Bol",
+            "Tacko Fall",
+            "George Muresan",
             2
         )
-        questionList.add(questionsFour)
+        questionList.add(questionFour)
 
-        val questionsFive = Question(
+        val questionFive = Question(
             5,
-            "Question five is on board. Can you see it?",
+            "How many three-pointers Shaquille O'Neal made during his career?",
             R.drawable.ic_question_five,
-            "Ethopia",
-            "El Salvador",
-            "Egypt",
-            "Equador",
+            "1",
+            "3",
+            "10",
+            "22",
+            1
+        )
+        questionList.add(questionFive)
+
+        val questionSix = Question(
+            6,
+            "Who drafted Domantas Sabonis?",
+            R.drawable.ic_question_six,
+            "Oklahoma Thunder",
+            "Minnesota Timberwolves",
+            "Indiana Pacers",
+            "Orlando Magic",
+            4
+        )
+        questionList.add(questionSix)
+
+        val questionSeven = Question(
+            7,
+            "Who became Most Valuable Player (MVP) in 2008?",
+            R.drawable.ic_question_seven,
+            "Kobe Bryant",
+            "LeBron James",
+            "Kevin Garnett",
+            "Kevin Durant",
+            1
+        )
+        questionList.add(questionSeven)
+
+        val questionEight = Question(
+            8,
+            "NBA's top scorer of all time?",
+            R.drawable.ic_question_eight,
+            "Michael Jordan",
+            "LeBron James",
+            "Kareem Abdul-Jabbar",
+            "Karl Malone",
             3
         )
-        questionList.add(questionsFive)
+        questionList.add(questionEight)
+
+        val questionNine = Question(
+            9,
+            "CJ McCollum height is 191 cm. What was it in ninth grade?",
+            R.drawable.ic_question_nine,
+            "153 cm",
+            "159 cm",
+            "165 cm",
+            "171 cm",
+            2
+        )
+        questionList.add(questionNine)
+
+        val questionTen = Question(
+            10,
+            "Which team has won the most NBA Championships?",
+            R.drawable.ic_question_ten,
+            "Los Angeles Lakers",
+            "Golden State Warriors",
+            "Boston Celtics",
+            "New York Knicks",
+            3
+        )
+        questionList.add(questionTen)
 
         return questionList
     }

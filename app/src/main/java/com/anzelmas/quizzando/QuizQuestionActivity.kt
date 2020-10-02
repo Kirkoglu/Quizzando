@@ -1,5 +1,6 @@
 package com.anzelmas.quizzando
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -16,15 +17,20 @@ import kotlinx.android.synthetic.main.activity_quiz_question.*
 
 class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
+
     private var currentPosition: Int = 1
     private var questionList: ArrayList<Question>? = null
     private var selectedOption: Int = 0
+    private var correctAnswersNumber: Int = 0
+    private var userName: String? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Inflate layout XML file and return a binding object instance
         setContentView(R.layout.activity_quiz_question)
+
+        userName = intent.getStringExtra(Constants.USER_NAME)
 
         questionList = Constants.getQuestions()
 //        Log.i("Question size", "${questionList!!.size}")
@@ -42,18 +48,13 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         val question = questionList!![currentPosition - 1]
 
         defaultOptions()
-
-        if (currentPosition == questionList!!.size) {
-            submit_Button.text = "FINISH ŽAIDIMĄ"
-        } else {
-            submit_Button.text = "SUBMIT"
-        }
+        submit_Button.text = "SUBMIT"
 
         progressBar.progress = currentPosition
         progressBar_textView.text = "$currentPosition" + "/" + progressBar.max
 
 
-        question_TextView.text = question!!.question
+        question_TextView.text = question.question
         question_image_imageView.setImageResource(question.image)
         optionOne_TextView.text = question.optionOne
         optionTwo_textView.text = question.optionTwo
@@ -69,7 +70,7 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         options.add(3, optionFour_TextView)
 
         for (option in options) {
-            option.setTextColor(Color.parseColor("#7A8089"))
+            option.setTextColor(Color.parseColor("#313030"))
             option.typeface = Typeface.DEFAULT
             option.background = ContextCompat.getDrawable(
                 this, R.drawable.default_option_border_bg
@@ -82,7 +83,7 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
         selectedOption = selectedOptionNumber
 
-        textView.setTextColor(Color.parseColor("#363A43"))
+        textView.setTextColor(Color.parseColor("#313030"))
         textView.setTypeface(textView.typeface, Typeface.BOLD)
         textView.background = ContextCompat.getDrawable(this, R.drawable.selected_option_border_bg)
     }
@@ -102,8 +103,12 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
                             putQuestion()
                         }
                         else -> {
-                            Toast.makeText(this, "Sėkmingai baigėte Quizą", Toast.LENGTH_SHORT)
-                                .show()
+                           val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME, userName)
+                            intent.putExtra(Constants.CORRECT_ANSWERS, correctAnswersNumber)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, questionList!!.size)
+                            startActivity(intent)
+                            finish()
                         }
                     }
                 } else {
@@ -111,13 +116,15 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
                     if (question!!.correctOption != selectedOption) {
                         answerView(selectedOption, R.drawable.wrong_option_border_bg)
+                    } else {
+                        correctAnswersNumber++
                     }
                     answerView(question.correctOption, R.drawable.correct_option_border_bg)
 
                     if (currentPosition == questionList!!.size) {
-                        submit_Button.text = "FINISH"
+                        submit_Button.text = "View Results"
                     } else {
-                        submit_Button.text = "GO TO NEXT KLAUSIMAS"
+                        submit_Button.text = "Next Question"
                     }
                 }
                 selectedOption = 0
